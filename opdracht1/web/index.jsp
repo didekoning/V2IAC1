@@ -1,4 +1,4 @@
-<%--
+<%@ page import="main.test" %><%--
   Created by IntelliJ IDEA.
   User: Dion
   Date: 09/02/2017
@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title><%=test.getName()%></title>
   </head>
   <body>
-  $END$
+  <%=test.getName()%>
   </body>
 </html>
