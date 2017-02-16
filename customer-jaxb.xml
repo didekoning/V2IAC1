@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<customer>
+    <address>
+        <entry>
+            <key>shipping</key>
+            <value>
+                <city>Utrecht</city>
+                <key>shipping</key>
+                <street>Daltonlaan</street>
+                <zip>1234DB</zip>
+            </value>
+        </entry>
+        <entry>
+            <key>billing</key>
+            <value>
+                <city>Hoogmade</city>
+                <key>billing</key>
+                <street>Theo Bosmanlaan</street>
+                <zip>1234DB</zip>
+            </value>
+        </entry>
+    </address>
+    <dateOfBirth>01-10-1996</dateOfBirth>
+    <name>Henk</name>
+</customer>
