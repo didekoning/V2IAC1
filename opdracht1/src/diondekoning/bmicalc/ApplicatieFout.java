@@ -1,5 +1,5 @@
 
-package BMICalc;
+package diondekoning.bmicalc;
 
 import javax.xml.ws.WebFault;
 
@@ -19,7 +19,7 @@ public class ApplicatieFout
      * Java type that goes as soapenv:Fault detail element.
      * 
      */
-    private  BMICalc.bmicalc_error.ApplicatieFout faultInfo;
+    private diondekoning.bmicalc_error.ApplicatieFout faultInfo;
 
     /**
      * 

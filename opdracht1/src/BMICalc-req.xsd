@@ -3,8 +3,8 @@
     <xs:element  name="BMICalc-request">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="weight" type="xs:integer"/>
-                <xs:element name="height" type="xs:integer"/>
+                <xs:element name="weight" type="xs:int"/>
+                <xs:element name="height" type="xs:int"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

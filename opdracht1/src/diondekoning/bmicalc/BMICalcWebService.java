@@ -1,5 +1,5 @@
 
-package BMICalc;
+package diondekoning.bmicalc;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "BMICalc.WebService", targetNamespace = "http://diondekoning/BMICalc", wsdlLocation = "file:/D:/Users/Dion/Documents/School/HU/V2IAC1/opdracht1/src/BMICalc/BMICalc.wsdl")
+@WebServiceClient(name = "BMICalc.WebService", targetNamespace = "http://diondekoning/BMICalc", wsdlLocation = "file:/Users/Dion/git/V2IAC1/opdracht1/src/BMICalc.wsdl")
 public class BMICalcWebService
     extends Service
 {
@@ -30,7 +30,7 @@ public class BMICalcWebService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/D:/Users/Dion/Documents/School/HU/V2IAC1/opdracht1/src/BMICalc/BMICalc.wsdl");
+            url = new URL("file:/Users/Dion/git/V2IAC1/opdracht1/src/BMICalc.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

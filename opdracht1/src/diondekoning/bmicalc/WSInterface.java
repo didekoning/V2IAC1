@@ -1,5 +1,5 @@
 
-package BMICalc;
+package diondekoning.bmicalc;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -20,9 +20,9 @@ import diondekoning.bmicalc_response.BMICalcResponse;
 @WebService(name = "WS-Interface", targetNamespace = "http://diondekoning/BMICalc")
 @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
 @XmlSeeAlso({
-        BMICalc.bmicalc_error.ObjectFactory.class,
-        BMICalc.bmicalc_request.ObjectFactory.class,
-        BMICalc.bmicalc_response.ObjectFactory.class
+    diondekoning.bmicalc_error.ObjectFactory.class,
+    diondekoning.bmicalc_request.ObjectFactory.class,
+    diondekoning.bmicalc_response.ObjectFactory.class
 })
 public interface WSInterface {
 
