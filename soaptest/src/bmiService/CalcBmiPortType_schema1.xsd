@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://bmiService/" xmlns:tns="http://bmiService/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="calcBmi" type="tns:calcBmi"/>
+
+  <xs:element name="calcBmiResponse" type="tns:calcBmiResponse"/>
+
+  <xs:complexType name="calcBmi">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="calcBmiResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

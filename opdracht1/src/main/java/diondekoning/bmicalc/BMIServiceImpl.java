@@ -11,17 +11,16 @@ import javax.jws.WebService;
  * Created by Dion on 26/02/2017.
  */
 @WebService(endpointInterface = "diondekoning.bmicalc.WSInterface")
-@SchemaValidation()
+//@SchemaValidation(handler=BMICalcValidationHandler.class)
 public class BMIServiceImpl implements WSInterface {
     @Override
     public BMICalcResponse bmiCalc(BMICalcRequest parameters) throws ApplicatieFout {
         ObjectFactory factory = new ObjectFactory();
         BMICalcResponse response = factory.createBMICalcResponse();
         try{
-            Integer result = parameters.getHeight() * parameters.getHeight() / parameters.getWeight();
-            response.setResult(result.toString());
+            BMICalc calc = new BMICalc(parameters.getHeight(), parameters.getWeight());
+            response.setResult(calc.calculate());
         }catch (RuntimeException e){
-            //TODO nog te implementeren
             diondekoning.bmicalc_error.ObjectFactory errorFactory = new diondekoning.bmicalc_error.ObjectFactory();
             diondekoning.bmicalc_error.ApplicatieFout x = errorFactory.createApplicatieFout();
             x.setError("Kan niet delen door 0!");
