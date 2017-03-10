@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://diondekoning/BMICalc-response">
+    <xs:annotation>
+        <xs:appinfo>Response element</xs:appinfo>
+        <xs:documentation>Het response element is een string omdat de applicatie dan makkelijk uitgebreid kan worden met bijvoorbeeld een advies.</xs:documentation>
+    </xs:annotation>
     <xs:element name="BMICalc-response">
         <xs:complexType>
             <xs:sequence>

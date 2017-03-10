@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://diondekoning/BMICalc-request">
+    <xs:annotation>
+        <xs:appinfo>Keuze elementen</xs:appinfo>
+        <xs:documentation>Ik heb gekozen voor int types omdat het geen bigintegers hoeven te zijn. Verder staan ze in een sequence zodat je altijd weet welk veld waarvoor is.</xs:documentation>
+    </xs:annotation>
     <xs:element  name="BMICalc-request">
         <xs:complexType>
             <xs:sequence>

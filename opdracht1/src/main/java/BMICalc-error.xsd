@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://diondekoning/BMICalc-error">
+    <xs:annotation>
+        <xs:appinfo>Foutelement</xs:appinfo>
+        <xs:documentation>Het foutelement stuurt een string terug. Hierin komt de error.</xs:documentation>
+    </xs:annotation>
     <xs:element name="ApplicatieFout">
         <xs:complexType>
             <xs:sequence>

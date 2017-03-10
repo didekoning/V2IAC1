@@ -18,8 +18,6 @@ public class BMICalc {
     public String calculate(){
         this.result = weight / (height * height);
         DecimalFormat df = new DecimalFormat("#.0");
-        System.out.println(height);
-        System.out.println(result);
         return df.format(result);
     }
 }
