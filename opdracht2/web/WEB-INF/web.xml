@@ -9,7 +9,7 @@
 
         <init-param>
             <param-name>com.sun.jersey.config.property.packages</param-name>
-            <param-value>com.example.jersey</param-value>
+            <param-value>BMICalc</param-value>
         </init-param>
 
         <init-param>
