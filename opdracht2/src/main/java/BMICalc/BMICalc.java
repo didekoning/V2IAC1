@@ -7,14 +7,13 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
+
+import BusinessLogic.Calculate;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
 
-@Path("/BMICalc")
+@Path("/api")
 @Produces(MediaType.APPLICATION_JSON)
 public class BMICalc {
     @GET
@@ -24,15 +23,31 @@ public class BMICalc {
     }
 
     @GET
-    @Path("/BMICalc/{schemaName}")
-    public Response getTables(@PathParam("schemaName") String schemaName) {
+    @Path("/BMICalc/{weight}/{height}")
+    public Response getTables(@PathParam("weight") int weight, @PathParam("height") int height) {
+        if(weight <= 0 || height <= 0){
+            Response error = showError("Invalid Weight or Height!", 500);
+            return error;
+        }
+
         JSONObject jObject = new JSONObject();
 
         JSONArray bmi = new JSONArray();
+        Calculate calc = new Calculate(weight, height);
+        bmi.put(calc.calculate());
+        System.out.println(calc.calculate());
+        jObject.put("BMI", bmi);
 
-        bmi.put("kaas");
+        return Response.status(Status.OK).entity(jObject.toString()).build();
+    }
 
-        jObject.put("tables", bmi);
+    public Response showError(String message, int code){
+        JSONObject jObject = new JSONObject();
+
+        JSONArray error = new JSONArray();
+        error.put(code);
+        error.put(message);
+        jObject.put("Error", error);
 
         return Response.status(Status.OK).entity(jObject.toString()).build();
     }

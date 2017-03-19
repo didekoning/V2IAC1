@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://diondekoning/BMICalc-request">
+    <xs:element  name="BMICalc-request">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="weight" type="xs:int"/>
+                <xs:element name="height" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

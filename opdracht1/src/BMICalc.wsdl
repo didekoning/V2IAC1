@@ -1,0 +1,71 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:req="http://diondekoning/BMICalc-request"
+                  xmlns:rsp="http://diondekoning/BMICalc-response"
+                  xmlns:flt="http://diondekoning/BMICalc-error"
+                  xmlns="http://diondekoning/BMICalc"
+                  targetNamespace="http://diondekoning/BMICalc"
+>
+
+    <!-- De verschillende XSD types om fouten af te vangen binnen de service -->
+    <wsdl:types>
+        <xsd:schema>
+            <xsd:import namespace="http://diondekoning/BMICalc-request"
+                        schemaLocation="BMICalc-req.xsd" />
+            <xsd:import namespace="http://diondekoning/BMICalc-response"
+                        schemaLocation="BMICalc-resp.xsd" />
+            <xsd:import namespace="http://diondekoning/BMICalc-error"
+                        schemaLocation="BMICalc-error.xsd" />
+        </xsd:schema>
+    </wsdl:types>
+
+    <!-- Alle berichten die gestuurd of teruggestuurd kunnen worden vanuit de applicatie -->
+    <wsdl:message name="request">
+        <wsdl:part name="parameters" element="req:BMICalc-request"/>
+    </wsdl:message>
+
+    <wsdl:message name="response">
+        <wsdl:part name="response" element="rsp:BMICalc-response"/>
+    </wsdl:message>
+
+    <wsdl:message name="ApplicatieFout">
+        <wsdl:part name="ApplicatieFout" element="flt:ApplicatieFout"/>
+    </wsdl:message>
+
+    <!-- De operaties van de webservice -->
+    <wsdl:portType name="WS-Interface">
+        <wsdl:operation name="BMICalc">
+            <wsdl:input message="request"/>
+            <wsdl:output message="response"/>
+            <wsdl:fault name="ApplicatieFout" message="ApplicatieFout"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <!-- De implementaties van de operaties -->
+    <wsdl:binding name="WS-Binding" type="WS-Interface">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="BMICalc">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ApplicatieFout">
+                <soap:fault name="ApplicatieFout" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <!-- De endpoints van de service -->
+    <wsdl:service name="BMICalc.WebService">
+        <wsdl:port name="WS-Port" binding="WS-Binding">
+            <soap:address location="http://localhost:8080/webservice/BMICalc"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>
+
