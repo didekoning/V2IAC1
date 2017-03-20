@@ -49,6 +49,6 @@ public class BMICalc {
         error.put(message);
         jObject.put("Error", error);
 
-        return Response.status(Status.OK).entity(jObject.toString()).build();
+        return Response.status(Status.INTERNAL_SERVER_ERROR).entity(jObject.toString()).build();
     }
 }
